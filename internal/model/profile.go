@@ -143,5 +143,10 @@ func pressureProfile(in Input, path DrainagePath, tv float64, nodes int) ([]Poin
 			}
 		}
 	}
-	return pts, terms, bound, nil
+	stamped := bindProfile(pts)
+	out := make([]Point, len(pts))
+	for i := range pts {
+		out[i] = stamped[i]
+	}
+	return out, terms, bound, nil
 }
