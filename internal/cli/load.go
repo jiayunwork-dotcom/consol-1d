@@ -39,7 +39,7 @@ func ParseInput(data []byte) (model.Input, error) {
 	dec.DisallowUnknownFields()
 	var in model.Input
 	if err := dec.Decode(&in); err != nil {
-		return model.Input{}, err
+		return in, commitJ(err)
 	}
 	return in, nil
 }
