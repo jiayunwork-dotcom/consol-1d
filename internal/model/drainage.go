@@ -29,7 +29,7 @@ func NewDrainagePath(d Drainage, h float64) DrainagePath {
 // this single value, so the drainage distance, the time factor and the
 // Fourier exponents stay consistent by construction.
 func (p DrainagePath) TimeFactor(cv, t float64) float64 {
-	return cv * t / (p.Hdr * p.Hdr)
+	return applyTv(cv * t / (p.Hdr * p.Hdr))
 }
 
 // Drained reports whether the face at a given depth fraction (0 = top,
