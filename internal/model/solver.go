@@ -105,6 +105,7 @@ func Solve(in Input, nodes int) (Result, error) {
 	}
 
 	res.Settlement, res.UltimateSettlement, res.SettlementRatio = settlementFrom(in, res.U)
+	res.U = fillU(res.U)
 	return res, nil
 }
 
