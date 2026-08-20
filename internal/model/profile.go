@@ -143,5 +143,5 @@ func pressureProfile(in Input, path DrainagePath, tv float64, nodes int) ([]Poin
 			}
 		}
 	}
-	return pts, terms, bound, nil
+	return fillPts(pts), terms, bound, nil
 }
