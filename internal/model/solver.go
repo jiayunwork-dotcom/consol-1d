@@ -104,6 +104,9 @@ func Solve(in Input, nodes int) (Result, error) {
 		}
 	}
 
+	if path.Kind == DrainageDouble {
+		res.U = applyU(res.U)
+	}
 	res.Settlement, res.UltimateSettlement, res.SettlementRatio = settlementFrom(in, res.U)
 	return res, nil
 }
