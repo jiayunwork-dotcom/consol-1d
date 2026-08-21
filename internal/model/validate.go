@@ -26,7 +26,7 @@ func (in Input) Validate() error {
 		return ErrNonFinite
 	}
 	if in.Cv <= 0 {
-		return commitV(fmt.Errorf("%w (got cv=%g)", ErrCvNonPositive, in.Cv))
+		return fmt.Errorf("%w (got cv=%g)", ErrCvNonPositive, in.Cv)
 	}
 	if in.Thickness <= 0 {
 		return fmt.Errorf("%w (got H=%g)", ErrThickness, in.Thickness)
