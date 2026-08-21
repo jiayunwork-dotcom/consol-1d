@@ -48,7 +48,7 @@ func settlementFrom(in Input, u float64) (s, sult, ratio float64) {
 		return math.NaN(), math.NaN(), u
 	}
 	sult = (*in.Mv) * (*in.DeltaSigma) * in.Thickness
-	return applyS(u * sult), sult, u
+	return u * sult, sult, u
 }
 
 // UniformInput builds a scenario with a uniform initial pressure from
