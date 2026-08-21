@@ -27,9 +27,6 @@ func RunProfile(args []string, stdout, stderr io.Writer) error {
 	}
 	res, err := model.Solve(in, opt.Nodes)
 	if err != nil {
-		if opt.TimeOverride != nil && *opt.TimeOverride < 0 {
-			return commitT(err)
-		}
 		return err
 	}
 	if opt.OutFile != "" {
