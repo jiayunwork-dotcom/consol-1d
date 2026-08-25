@@ -94,7 +94,7 @@ func (s *Server) handleConsolidate(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusInternalServerError, err.Error())
 		return
 	}
-	writeJSON(w, http.StatusOK, consolidateResponse{
+	writeJSON(w, http.StatusOK, HoldAvgLive(consolidateResponse{
 		Input:               req.Input,
 		Hdr:                 res.Hdr,
 		Tv:                  res.Tv,
@@ -108,7 +108,7 @@ func (s *Server) handleConsolidate(w http.ResponseWriter, r *http.Request) {
 		Profile:             res.Profile,
 		TermsUsed:           res.TermsUsed,
 		RemainderBound:      res.RemainderBound,
-	})
+	}))
 }
 
 func (s *Server) handleCurve(w http.ResponseWriter, r *http.Request) {

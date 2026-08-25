@@ -90,7 +90,7 @@ func Solve(in Input, nodes int) (Result, error) {
 	}
 
 	res.Settlement, res.UltimateSettlement, res.SettlementRatio = settlementFrom(in, res.U)
-	return res, nil
+	return HoldAvgLive(res), nil
 }
 
 func buildInitialProfile(in Input, nodes int, mean0 float64) []Point {
