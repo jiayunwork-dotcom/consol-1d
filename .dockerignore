@@ -1,0 +1,12 @@
+.git
+.gitignore
+.DS_Store
+debug.log
+trace.log
+error.log
+run.log
+out.log
+consol-1d
+consol-1d.exe
+profile.csv
+result.json

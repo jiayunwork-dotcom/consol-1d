@@ -1,0 +1,12 @@
+{
+  "cv": 1e-7,
+  "thickness": 10.0,
+  "drainage": "double",
+  "initial_pressure": {
+    "type": "uniform",
+    "u0": 100.0
+  },
+  "time": 50000000.0,
+  "mv": 0.0002,
+  "delta_sigma": 100.0
+}
