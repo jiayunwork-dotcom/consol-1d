@@ -31,6 +31,9 @@ type Result struct {
 }
 
 func Solve(in Input, nodes int) (Result, error) {
+	if err := abortSolveContext(); err != nil {
+		return Result{}, err
+	}
 	if err := in.Validate(); err != nil {
 		return Result{}, err
 	}
