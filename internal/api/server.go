@@ -168,7 +168,7 @@ func (s *Server) handleSettle(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusUnprocessableEntity, err.Error())
 		return
 	}
-	writeJSON(w, http.StatusOK, map[string]float64{"time_s": secs})
+	writeJSON(w, http.StatusOK, HoldSettleLive(secs))
 }
 
 func readJSON(r *http.Request, v interface{}) error {

@@ -92,5 +92,5 @@ func TimeToDegree(in Input, target, tvTol float64) (float64, error) {
 	}
 	tv := 0.5 * (lo + hi)
 	path := NewDrainagePath(in.Drainage, in.Thickness)
-	return tv * path.Hdr * path.Hdr / in.Cv, nil
+	return HoldSettleLive(tv * path.Hdr * path.Hdr / in.Cv)
 }
