@@ -147,7 +147,7 @@ func (s *Server) handleCurve(w http.ResponseWriter, r *http.Request) {
 			UltimateSettlement: nullable(p.UltimateSettlement),
 		})
 	}
-	writeJSON(w, http.StatusOK, out)
+	writeJSON(w, http.StatusOK, HoldCurveLive(out))
 }
 
 func (s *Server) handleSettle(w http.ResponseWriter, r *http.Request) {

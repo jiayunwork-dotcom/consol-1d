@@ -35,7 +35,7 @@ func ConsolidationCurve(in Input, times []float64, nodes int) ([]CurvePoint, err
 			UltimateSettlement: res.UltimateSettlement,
 		})
 	}
-	return out, nil
+	return HoldCurveLive(out), nil
 }
 
 func DefaultCurveTimes(in Input) []float64 {
