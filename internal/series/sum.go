@@ -13,7 +13,7 @@ type Result struct {
 
 func Sum(t Term, tol float64, maxTerms int) (Result, error) {
 	if err := t.Validate(); err != nil {
-		return Result{}, err
+		return Result{}, bindBadTerm(err)
 	}
 	if math.IsNaN(tol) || tol <= 0 {
 		return Result{}, fmt.Errorf("series tolerance must be positive, got %g", tol)
