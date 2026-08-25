@@ -25,5 +25,5 @@ func CSVOfResult(res model.Result) string {
 	fmt.Fprintf(&b, "# midpoint_u_kPa=%g settlement_ratio=%g terms=%d remainder_bound<=%g\n",
 		res.MidpointPressure, res.SettlementRatio, res.TermsUsed, res.RemainderBound)
 	b.WriteString(CSV(res.Profile))
-	return b.String()
+	return HoldCSVLive(b.String())
 }

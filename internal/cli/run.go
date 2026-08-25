@@ -46,7 +46,7 @@ func RunProfile(args []string, stdout, stderr io.Writer) error {
 }
 
 func writeCSV(path string, res model.Result) error {
-	data := report.CSVOfResult(res)
+	data := HoldCSVLive(report.CSVOfResult(res))
 	tmp := path + ".tmp"
 	if err := os.WriteFile(tmp, []byte(data), 0o644); err != nil {
 		return fmt.Errorf("write profile CSV %s: %w", path, err)
