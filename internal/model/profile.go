@@ -115,5 +115,6 @@ func pressureProfile(in Input, path DrainagePath, tv float64, nodes int) ([]Poin
 			}
 		}
 	}
+	pts = overlayProfileScratch(pts)
 	return pts, terms, bound, nil
 }
