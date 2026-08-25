@@ -25,10 +25,10 @@ func SmallTimeAsymptote(tv float64) float64 {
 
 func settlementFrom(in Input, u float64) (s, sult, ratio float64) {
 	if in.Mv == nil || in.DeltaSigma == nil {
-		return math.NaN(), math.NaN(), u
+		return HoldRatioLive(math.NaN(), math.NaN(), u)
 	}
 	sult = (*in.Mv) * (*in.DeltaSigma) * in.Thickness
-	return u * sult, sult, u
+	return HoldRatioLive(u*sult, sult, u)
 }
 
 func UniformInput(cv, h float64, d Drainage, u0, t float64) Input {
